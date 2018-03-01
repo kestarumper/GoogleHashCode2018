@@ -24,6 +24,15 @@ public class Car {
 
     boolean canHandle(Road road) {
         int toCustomer = distanceTo(road.start_pos_x, road.start_pos_y);
+
+        int diff = road.minStart - toCustomer;
+
+        if(diff > 0) {
+            int fromCustomerToDestination = distanceTo(road.start_pos_x, road.start_pos_y, road.end_pos_x, road.end_pos_y);
+            nextArrive = nextFree + toCustomer + fromCustomerToDestination;
+            return nextFree + toCustomer + diff + fromCustomerToDestination <= road.maxEnd;
+        }
+
         int fromCustomerToDestination = distanceTo(road.start_pos_x, road.start_pos_y, road.end_pos_x, road.end_pos_y);
         nextArrive = nextFree + toCustomer + fromCustomerToDestination;
         return nextFree + toCustomer + fromCustomerToDestination <= road.maxEnd;
