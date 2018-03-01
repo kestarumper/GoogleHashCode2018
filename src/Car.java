@@ -25,9 +25,7 @@ public class Car {
     boolean canHandle(Road road) {
         int toCustomer = distanceTo(road.start_pos_x, road.start_pos_y);
         int fromCustomerToDestination = distanceTo(road.start_pos_x, road.start_pos_y, road.end_pos_x, road.end_pos_y);
-
         nextArrive = nextFree + toCustomer + fromCustomerToDestination;
-
         return nextFree + toCustomer + fromCustomerToDestination <= road.maxEnd;
     }
 
@@ -46,8 +44,10 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "roadsHandled=" + roadsHandled +
-                '}';
+        System.out.print(roadsHandled.size() + " ");
+        for (Road road : roadsHandled) {
+            System.out.print(road + " ");
+        }
+        return "";
     }
 }

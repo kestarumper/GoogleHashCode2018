@@ -19,14 +19,6 @@ public class Road {
 
     @Override
     public String toString() {
-        return "Road{" +
-                "ID=" + id +
-                ", start_pos_x=" + start_pos_x +
-                ", start_pos_y=" + start_pos_y +
-                ", end_pos_x=" + end_pos_x +
-                ", end_pos_y=" + end_pos_y +
-                ", minStart=" + minStart +
-                ", maxEnd=" + maxEnd +
-                '}';
+        return ""+id;
     }
 }
